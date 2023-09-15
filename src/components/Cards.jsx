@@ -14,7 +14,7 @@ const BASE_URL = 'https://staging.iamdave.ai';
 const Cards = () => {
   const [suppliers, setSuppliers] = useState([]);
   const [currentSupplierIndex, setCurrentSupplierIndex] = useState(0);
-  
+
   useEffect(() => {
     const fetchSuppliers = async () => {
       try {
@@ -29,8 +29,7 @@ const Cards = () => {
             },
           }
         );
-        console.log(response)
-        console.log(response.data.is_last)
+         console.log(response.data.is_last)
 
         const data = response.data;
         setSuppliers(data.data);
@@ -45,22 +44,21 @@ const Cards = () => {
   const handleNextSupplier = () => {
     if (currentSupplierIndex < suppliers.length - 1) {
       setCurrentSupplierIndex(currentSupplierIndex + 1);
-    } 
+    }
   };
-  
+
   const handlePrevious = () => {
     if (currentSupplierIndex > 0) {
       setCurrentSupplierIndex(currentSupplierIndex - 1);
     }
   }
- 
- 
-console.log(suppliers)
-    return (
+
+
+   return (
     <>
       <div className='flex justify-center'>
         <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mt-10 w-96 h-96 overflow-y-auto">
-          {suppliers.length > 0  &&(
+          {suppliers.length > 0 && (
             <div className="border p-4 px-4 py-2 grid grid-cols-2 gap-2">
               <div className="text-blue-600 flex items-center">
                 <CategoryIcon className="mr-2" />
@@ -124,7 +122,7 @@ console.log(suppliers)
           Next Page &#8594;
         </button>
       </div>
-    
+
     </>
   );
 };

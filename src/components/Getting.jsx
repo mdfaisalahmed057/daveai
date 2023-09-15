@@ -15,15 +15,14 @@ const SupplierList = () => {
   const [suppliers, setSuppliers] = useState([]);
   const [currentSupplierIndex, setCurrentSupplierIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('source_time'); // Default sorting by source_time
-  const [filteredSuppliers, setFilteredSuppliers] = useState([]); // State for filtered suppliers
+  const [sortBy, setSortBy] = useState('source_time'); 
+  const [filteredSuppliers, setFilteredSuppliers] = useState([]); 
   const [is_last, setIsLast] = useState(true)
   const [is_First, setIsFirst] = useState(false)
   const [totalSuppliersCount, setTotalSuppliersCount] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
-  console.log(filteredSuppliers)
-  useEffect(() => {
+   useEffect(() => {
     const fetchSuppliers = async () => {
       try {
         const response = await axios.get(
@@ -37,8 +36,7 @@ const SupplierList = () => {
             },
           }
         );
-        console.log(response)
-        setIsFirst(response.data.is_first)
+         setIsFirst(response.data.is_first)
         setIsLast(response.data.is_last)
         setPageNumber(response.data.data.length)
         const data = response.data;
@@ -58,6 +56,7 @@ const SupplierList = () => {
       setPageNumber(pageNumber + 1);
     }
   };
+
   const handlePrevious = () => {
     if (is_First && currentSupplierIndex > 0) {
       setCurrentSupplierIndex(currentSupplierIndex - 1);
@@ -66,7 +65,7 @@ const SupplierList = () => {
     console.log('After handling previous:', is_First, currentSupplierIndex);
   };
 
-  //search quesry 
+  //search query 
   const performSearch = () => {
     const searchTerm = searchQuery.toLowerCase();
     const filtered = suppliers.filter((supplier) =>
@@ -85,6 +84,7 @@ const SupplierList = () => {
 
     setFilteredSuppliers(sortedFiltered);
   };
+  
   return (
     <>
 
