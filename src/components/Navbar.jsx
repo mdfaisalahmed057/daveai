@@ -26,7 +26,7 @@ export default function NavbarDefault() {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center text-black" >
-          Pages
+          Home
         </a>
       </Typography>
       <Typography
@@ -36,10 +36,10 @@ export default function NavbarDefault() {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center text-black">
-          Account
+          About
         </a>
       </Typography>
-      <Typography
+      {/* <Typography
         as="li"
         variant="small"
         color="blue-gray"
@@ -48,8 +48,8 @@ export default function NavbarDefault() {
         <a href="#" className="flex items-center text-black">
           Blocks
         </a>
-      </Typography>
-      <Typography
+      </Typography> */}
+      {/* <Typography
         as="li"
         variant="small"
         color="blue-gray"
@@ -58,7 +58,7 @@ export default function NavbarDefault() {
         <a href="#" className="flex items-center text-black">
           Docs
         </a>
-      </Typography>
+      </Typography> */}
     </ul>
   );
 
@@ -74,7 +74,7 @@ export default function NavbarDefault() {
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block text-black">
-          <span>Buy Now</span>
+          <span>Book Slot</span>
         </Button>
         <IconButton
           variant="text"
